@@ -16,7 +16,11 @@ class MyFrame ( wx.Frame ):
 		for x in range(100):
 		
                     textCtrl = wx.TextCtrl( self.m_scrolledWindow, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-                    gSizer.Add( textCtrl, 0, wx.ALL, 1 )
+                    
+                    textCtrl.SetMinSize( wx.Size( 1,150 ) )
+                    textCtrl.SetMaxSize( wx.Size( -1,150 ) )
+                    
+                    gSizer.Add( textCtrl, 0, wx.ALL|wx.EXPAND, 5 )
 		
 		
 		self.m_scrolledWindow.SetSizer( gSizer )
